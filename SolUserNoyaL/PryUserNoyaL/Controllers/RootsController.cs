@@ -17,12 +17,14 @@ namespace PryUserNoyaL.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Roots
+        [Authorize]
         public IQueryable<Root> GetRoots()
         {
             return db.Roots;
         }
 
         // GET: api/Roots/5
+        [Authorize]
         [ResponseType(typeof(Root))]
         public IHttpActionResult GetRoot(int id)
         {
@@ -36,6 +38,7 @@ namespace PryUserNoyaL.Controllers
         }
 
         // PUT: api/Roots/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutRoot(int id, Root root)
         {
@@ -71,6 +74,7 @@ namespace PryUserNoyaL.Controllers
         }
 
         // POST: api/Roots
+        [Authorize]
         [ResponseType(typeof(Root))]
         public IHttpActionResult PostRoot(Root root)
         {
@@ -86,6 +90,7 @@ namespace PryUserNoyaL.Controllers
         }
 
         // DELETE: api/Roots/5
+        [Authorize]
         [ResponseType(typeof(Root))]
         public IHttpActionResult DeleteRoot(int id)
         {
